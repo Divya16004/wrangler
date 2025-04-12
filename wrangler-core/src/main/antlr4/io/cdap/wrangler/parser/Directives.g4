@@ -311,3 +311,13 @@ fragment Int
 fragment Digit
  : [0-9]
  ;
+
+// Lexer Rules
+BYTE_SIZE: NUMBER BYTE_UNIT;
+TIME_DURATION: NUMBER TIME_UNIT;
+
+fragment BYTE_UNIT: ('B' | 'KB' | 'MB' | 'GB' | 'TB');
+fragment TIME_UNIT: ('ms' | 's' | 'm' | 'h');
+
+// Parser rules - define how BYTE_SIZE and TIME_DURATION can be used in directives
+
